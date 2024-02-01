@@ -8,8 +8,11 @@ import 'package:flutter_learn_project/pages/profile_page.dart';
 import 'package:flutter_learn_project/pages/second_page.dart';
 import 'package:flutter_learn_project/pages/settings_page.dart';
 import 'package:flutter_learn_project/pages/todo_page.dart';
+import 'package:hive_flutter/hive_flutter.dart';
 
-void main() {
+void main() async {
+  await Hive.initFlutter();
+  var box = await Hive.openBox('mybox');
   runApp(const MyApp());
 }
 
